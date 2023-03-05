@@ -1,0 +1,4 @@
+!.storybook
+!.github
+storybook-static
+coverage
