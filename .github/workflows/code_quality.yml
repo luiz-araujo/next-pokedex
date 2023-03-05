@@ -1,0 +1,43 @@
+name: Code quality check on PR
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches:
+      - '**'
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7
+
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: 'pnpm'
+
+      - name: Install Dependencies
+        run: pnpm install --ignore-scripts --frozen-lockfile
+
+      - name: Check prettier
+        run: pnpm exec prettier --check $(git diff --cached --name-only --diff-filter d HEAD^) --ignore-unknown
+
+      - name: Check lint
+        run: pnpm run lint
+
+      - name: Check the validity of types
+        run: pnpm run check:types
