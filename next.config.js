@@ -1,5 +1,3 @@
-const isProduction = process.env.NODE_ENV === 'production';
-
 /** @type {import('next').NextConfig} */
 module.exports = {
   reactStrictMode: true,
@@ -8,7 +6,7 @@ module.exports = {
     /**
      * @see https://github.com/vercel/next.js/pull/14046
      */
-    scrollRestoration: true
+    scrollRestoration: true,
   },
 
   eslint: {

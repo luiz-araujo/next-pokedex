@@ -1,4 +1,4 @@
-import Head from 'next/head'
+import Head from 'next/head';
 import { styled } from '../theme/stitches.config';
 
 const Button = styled('button', {
@@ -28,5 +28,5 @@ export default function Home() {
         <Button>Button Stitches</Button>
       </main>
     </>
-  )
+  );
 }

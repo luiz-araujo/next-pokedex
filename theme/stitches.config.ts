@@ -1,19 +1,17 @@
-import { createStitches, CSS as StitchesCSS } from '@stitches/react';
-
-export type { VariantProps } from '@stitches/react';
-
-export type { $$StyledComponentProps } from '@stitches/react/types/styled-component';
-
-export type CSS = StitchesCSS<typeof config>;
-
+// eslint-disable-next-line no-restricted-imports
+import { CSS as StitchesCSS, createStitches } from '@stitches/react';
 import {
-  MargemRegularWoff,
-  MargemRegularWoff2,
-  MargemMediumWoff,
-  MargemMediumWoff2,
   MargemBoldWoff,
   MargemBoldWoff2,
+  MargemMediumWoff,
+  MargemMediumWoff2,
+  MargemRegularWoff,
+  MargemRegularWoff2,
 } from './fonts';
+
+export type { VariantProps } from '@stitches/react';
+export type { $$StyledComponentProps } from '@stitches/react/types/styled-component';
+export type CSS = StitchesCSS<typeof config>;
 
 export const {
   styled,
