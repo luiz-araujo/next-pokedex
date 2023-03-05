@@ -34,3 +34,18 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# eslint
+.eslintcache
+
+# storybook
+/storybook-static
+
+# we can not use the app folder until stitches supports the latest version of react
+# https://beta.nextjs.org/docs/styling/css-in-js
+/app
+
+# playwright
+/test-results/
+/playwright-report/
+/playwright/.cache/
