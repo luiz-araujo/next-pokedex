@@ -19,6 +19,7 @@ module.exports = {
     'plugin:jest-dom/recommended',
     'plugin:testing-library/react',
     'plugin:prettier/recommended',
+    'plugin:storybook/recommended',
   ],
   parser: '@typescript-eslint/parser',
   plugins: ['import'],
@@ -29,14 +30,12 @@ module.exports = {
      * stripped before being pushed to production.
      */
     'no-console': 'error',
-
     /**
      * JavaScript allows the omission of curly braces when a block contains only one statement. However,
      * it is considered by many to be best practice to never omit curly braces around blocks, even when
      * they are optional, because it can lead to bugs and reduces code clarity and consistency.
      */
     curly: 'error',
-
     /**
      * This rule avoid bugs by disallowing expressions where the operation doesn't affect the value
      * Comparisons which will always evaluate to true or false and logical expressions (||, &&, ??)
@@ -46,14 +45,12 @@ module.exports = {
      * @see https://eslint.org/docs/latest/rules/no-constant-binary-expression
      */
     'no-constant-binary-expression': 'error',
-
     /**
      * Nesting ternary expressions can make code more difficult to understand.
      *
      * @see https://eslint.org/docs/latest/rules/no-nested-ternary
      */
     'no-nested-ternary': 'error',
-
     /**
      * Imports restriction agreements
      *
@@ -85,12 +82,10 @@ module.exports = {
         ],
       },
     ],
-
     /**
      * Disallows async functions which have no await expression.
      */
     'require-await': 'error',
-
     /**
      * There are many ways to import a index file. This rule prevent unnecessary
      * path segments in import and require statements
@@ -101,7 +96,6 @@ module.exports = {
         noUselessIndex: true,
       },
     ],
-
     /**
      * Enforce a convention in the order of named imports
      *
@@ -113,7 +107,6 @@ module.exports = {
         ignoreDeclarationSort: true,
       },
     ],
-
     /**
      * Enforce a convention in the order of require / import statements.
      */
