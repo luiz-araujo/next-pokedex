@@ -41,3 +41,6 @@ jobs:
 
       - name: Check the validity of types
         run: pnpm run check:types
+
+      - name: Check tests
+        run: pnpm run test --ci --maxWorkers=2

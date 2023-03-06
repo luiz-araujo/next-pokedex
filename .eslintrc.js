@@ -1,4 +1,7 @@
 module.exports = {
+  env: {
+    'jest/globals': true,
+  },
   settings: {
     'import/resolver': {
       typescript: true,
@@ -12,6 +15,9 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:import/recommended',
     'plugin:import/typescript',
+    'plugin:jest/recommended',
+    'plugin:jest-dom/recommended',
+    'plugin:testing-library/react',
     'plugin:prettier/recommended',
   ],
   parser: '@typescript-eslint/parser',
@@ -129,4 +135,28 @@ module.exports = {
       },
     ],
   },
+  overrides: [
+    {
+      files: ['*.test.ts', '*.test.tsx'],
+      env: {
+        'jest/globals': true,
+      },
+      extends: [
+        'plugin:jest/recommended',
+        'plugin:jest-dom/recommended',
+        'plugin:testing-library/react',
+      ],
+      rules: {
+        'jest/expect-expect': [
+          'error',
+          {
+            assertFunctionNames: ['expect', 'screen.get*', 'screen.find*'],
+          },
+        ],
+      },
+    },
+    {
+      files: ['*.spec.ts', '*.spec.tsx'],
+    },
+  ],
 };
