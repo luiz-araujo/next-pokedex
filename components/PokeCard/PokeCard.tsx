@@ -3,12 +3,12 @@ import { Card, CardItem, Image, Text, Title } from './PokeCard.styles';
 const POKEMON_API =
   'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/';
 
-interface PokeCardProps {
+export type PokeCardProps = {
   id: number;
   name: string;
   type: string;
   base_experience: number;
-}
+};
 
 export const PokeCard = ({
   id,
