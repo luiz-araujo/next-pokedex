@@ -1,5 +1,5 @@
 import { composeStories } from '@storybook/testing-react';
-import { render, screen } from '@test/testUtils';
+import { render, screen } from '@/test/testUtils';
 import * as stories from './Tag.stories';
 
 const { Default: Tag } = composeStories(stories);
