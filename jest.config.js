@@ -21,16 +21,16 @@ const customJestConfig = {
    */
   testRegex: '(\\.|/)test\\.[jt]sx?$',
   moduleNameMapper: {
+    // Handle module aliases
     '\\.(woff|woff2)$': '<rootDir>/test/mocks/fileMock.js',
-    '^@components(.*)$': '<rootDir>/components$1',
-    '^@features/(.*)': '<rootDir>/features/$1',
-    '^@pages/(.*)': '<rootDir>/pages/$1',
-    '^@test/(.*)': '<rootDir>/test/$1',
-    '^@utils/(.*)': '<rootDir>/utils/$1',
-    '^@hooks/(.*)': '<rootDir>/hooks/$1',
-    '^@mocks/(.*)': '<rootDir>/mocks/$1',
-    '^@data/(.*)': '<rootDir>/data/$1',
+    '^@/components/(.*)$': '<rootDir>/components/$1',
+    '^@/pages/(.*)$': '<rootDir>/pages/$1',
+    '^@/utils/(.*)$': '<rootDir>/utils/$1',
+    '^@/hooks/(.*)$': '<rootDir>/hooks/$1',
+    '^@/test/(.*)$': '<rootDir>/test/$1',
+    '^@/theme/(.*)$': '<rootDir>/theme/$1',
   },
+
   collectCoverageFrom: [
     '**/*.{js,jsx,ts,tsx}',
     '!<rootDir>/*.{js,jsx,ts,tsx}',

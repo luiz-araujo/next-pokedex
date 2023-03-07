@@ -1,7 +1,4 @@
 module.exports = {
-  env: {
-    'jest/globals': true,
-  },
   settings: {
     'import/resolver': {
       typescript: true,
@@ -12,14 +9,11 @@ module.exports = {
     'eslint:recommended',
     'next/core-web-vitals',
     'plugin:jsx-a11y/recommended',
+    'plugin:storybook/recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:import/recommended',
     'plugin:import/typescript',
-    'plugin:jest/recommended',
-    'plugin:jest-dom/recommended',
-    'plugin:testing-library/react',
     'plugin:prettier/recommended',
-    'plugin:storybook/recommended',
   ],
   parser: '@typescript-eslint/parser',
   plugins: ['import'],
@@ -55,29 +49,27 @@ module.exports = {
      * Imports restriction agreements
      *
      * We can only import what is exported by the index file of the folders
-     * that are direct children of `components` or `features`
+     * that are direct children of `components`
      *
      * @example
      * // invalid
-     * import { Header } from '@components';
-     * import { Header } from '@components/Header/Header';
-     * import { Summary } from '@features/cart/components/Summary';
+     * import { Header } from '@/components';
+     * import { Header } from '@/components/Header/Header';
      *
      * // valid
-     * import { Header } from '@components/Header';
-     * import { Summary } from '@features/cart';
+     * import { Header } from '@/components/Header';
      */
     'no-restricted-imports': [
       'error',
       {
         paths: [
           {
-            name: '@components',
+            name: '@/components',
           },
         ],
         patterns: [
           {
-            group: ['@components/*/**', '@features/*/**'],
+            group: ['@/components/*/**'],
           },
         ],
       },
