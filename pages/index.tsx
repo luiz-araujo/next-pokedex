@@ -1,12 +1,13 @@
 import type { NextPage } from 'next';
+import { ChangeTheme } from '@/components/ChangeTheme';
+import { PokeGame } from '@/components/PokeGame';
 
 const Home: NextPage = () => {
   return (
-    <div style={{ padding: '$400' }}>
-      <a href="/swr">Ir para swr client side</a>
-      <br />
-      <a href="/swr/vercel/next.js">Ir para swr server side</a>
-    </div>
+    <>
+      <ChangeTheme />
+      <PokeGame />
+    </>
   );
 };
 

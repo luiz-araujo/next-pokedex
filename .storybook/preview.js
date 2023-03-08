@@ -1,5 +1,7 @@
 import { initialize, mswDecorator } from 'msw-storybook-addon';
+import { ThemeProvider } from 'next-themes';
 import { SWRConfig } from 'swr';
+import { darkTheme } from '@/theme/stitches.config';
 
 // Initialize MSW
 initialize();
@@ -21,7 +23,16 @@ export const decorators = [
   mswDecorator,
   (Story) => (
     <SWRConfig value={{ provider: () => new Map() }}>
-      <Story />
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="system"
+        value={{
+          light: 'light',
+          dark: darkTheme.className,
+        }}
+      >
+        <Story />
+      </ThemeProvider>
     </SWRConfig>
   ),
 ];

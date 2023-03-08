@@ -5,8 +5,8 @@ type TagProps = {
 };
 
 const TagLabel = styled('p', {
-  backgroundColor: '$green60',
-  borderColor: '$green60',
+  backgroundColor: '$green50',
+  borderColor: '$green50',
   borderRadius: '$100',
   borderStyle: 'solid',
   borderWidth: '$thin',
