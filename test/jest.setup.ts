@@ -11,6 +11,25 @@
 import '@testing-library/jest-dom';
 
 /**
+ * All tests cases that performs networks calls must be mocked using MSW
+ * this will start the MSW server
+ *
+ * The MSW Server can be used globally in all tests inside this project
+ *
+ * @example
+ * import server from './mocks/server';
+ * ...
+ * server.use(
+ *  rest.post(...)
+ * );
+ */
+import { server } from '@/mocks/server';
+
+beforeAll(() => server.listen());
+afterEach(() => server.resetHandlers());
+afterAll(() => server.close());
+
+/**
  * Importing next during test applies automated polyfills:
  *  - Polyfill the built-in "fetch" provided by Next.js
  *

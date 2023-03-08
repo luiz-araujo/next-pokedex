@@ -29,6 +29,7 @@ const customJestConfig = {
     '^@/hooks/(.*)$': '<rootDir>/hooks/$1',
     '^@/test/(.*)$': '<rootDir>/test/$1',
     '^@/theme/(.*)$': '<rootDir>/theme/$1',
+    '^@/mocks/(.*)$': '<rootDir>/mocks/$1',
   },
 
   collectCoverageFrom: [
@@ -43,6 +44,7 @@ const customJestConfig = {
     '!**/mocks/**',
     '!**/.github/**',
     '!**/index.ts',
+    '!<rootDir>/public/mockServiceWorker.js',
   ],
 };
 

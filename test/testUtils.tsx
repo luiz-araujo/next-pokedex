@@ -1,6 +1,7 @@
 import { RenderOptions, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { ReactElement } from 'react';
+import { Cache, SWRConfig } from 'swr';
 
 type CustomRenderOptions = Omit<RenderOptions, 'wrapper'> & {
   userEventSetup?: Parameters<typeof userEvent.setup>[0];
@@ -8,6 +9,7 @@ type CustomRenderOptions = Omit<RenderOptions, 'wrapper'> & {
 
 type WrapperProps = {
   children: React.ReactNode;
+  cache: Cache<unknown>;
 };
 
 export class NoErrorThrownError extends Error {}
@@ -30,19 +32,22 @@ export async function getError<T>(call: () => unknown): Promise<T> {
 /**
  * Setup global Context Providers
  */
-const Wrapper = ({ children }: WrapperProps) => {
-  return <>{children}</>;
+const Wrapper = ({ children, cache }: WrapperProps) => {
+  return <SWRConfig value={{ provider: () => cache }}>{children}</SWRConfig>;
 };
 
 const customRender = (
   ui: ReactElement,
   { userEventSetup, ...options }: CustomRenderOptions = {},
 ) => {
+  const cache = new Map();
+
   return {
     user: userEvent.setup(userEventSetup),
+    cache,
     ...render(ui, {
       wrapper: (props) => {
-        return <Wrapper {...props} />;
+        return <Wrapper {...props} cache={cache} />;
       },
       ...options,
     }),
