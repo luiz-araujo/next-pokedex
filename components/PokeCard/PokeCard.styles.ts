@@ -96,12 +96,12 @@ export const Text = styled('p', {
   zIndex: 4,
 
   '&:nth-child(2n)': {
-    top: '3%',
+    top: '0',
     right: '5%',
   },
 
   '&:nth-child(2n + 1)': {
-    bottom: '3%',
+    bottom: '0',
     left: '5%',
     transform: 'rotatez(180deg)',
   },
