@@ -4,8 +4,7 @@ import { useEffect } from 'react';
 import { ChangeTheme } from './ChangeTheme';
 import { ThemeBlock } from './ChangeTheme.styles';
 
-// More on how to set up stories at: https://storybook.js.org/docs/7.0/react/writing-stories/introduction
-const meta: Meta<typeof ChangeTheme> = {
+const meta = {
   title: 'Components/ChangeTheme',
   component: ChangeTheme,
   tags: ['autodocs'],
@@ -31,10 +30,10 @@ const meta: Meta<typeof ChangeTheme> = {
       );
     },
   ],
-};
+} satisfies Meta<typeof ChangeTheme>;
 
 export default meta;
-type Story = StoryObj<typeof ChangeTheme>;
 
-// More on writing stories with args: https://storybook.js.org/docs/7.0/react/writing-stories/args
+type Story = StoryObj<typeof meta>;
+
 export const Default: Story = {};

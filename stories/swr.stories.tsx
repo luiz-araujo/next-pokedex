@@ -3,10 +3,9 @@ import { rest } from 'msw';
 import { SWRConfig } from 'swr';
 import SWR from '../pages/swr';
 
-const meta: Meta<typeof SWR> = {
+const meta = {
   title: 'Example/SWR',
   component: SWR,
-  tags: ['autodocs'],
   decorators: [
     (Story) => (
       <SWRConfig value={{ provider: () => new Map() }}>
@@ -14,10 +13,11 @@ const meta: Meta<typeof SWR> = {
       </SWRConfig>
     ),
   ],
-};
+} satisfies Meta<typeof SWR>;
 
 export default meta;
-type Story = StoryObj<typeof SWR>;
+
+type Story = StoryObj<typeof meta>;
 
 export const SuccessBehavior: Story = {
   parameters: {

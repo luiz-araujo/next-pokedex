@@ -1,27 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { PokeGame } from './PokeGame';
 
-// More on how to set up stories at: https://storybook.js.org/docs/7.0/react/writing-stories/introduction
-const meta: Meta<typeof PokeGame> = {
+const meta = {
   title: 'Components/PokeGame',
   component: PokeGame,
-  tags: ['autodocs'],
-  decorators: [
-    (Story) => {
-      return (
-        <div style={{ margin: '0 auto' }}>
-          <Story />
-        </div>
-      );
-    },
-  ],
-};
-
-export default meta;
-type Story = StoryObj<typeof PokeGame>;
-
-// More on writing stories with args: https://storybook.js.org/docs/7.0/react/writing-stories/args
-export const Default: Story = {
   args: {
     isWinner: true,
     exp: 45,
@@ -37,4 +19,19 @@ export const Default: Story = {
       { id: 7, name: 'Squirtle', type: 'water', base_experience: 63 },
     ],
   },
-};
+  decorators: [
+    (Story) => {
+      return (
+        <div style={{ margin: '0 auto' }}>
+          <Story />
+        </div>
+      );
+    },
+  ],
+} satisfies Meta<typeof PokeGame>;
+
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {};

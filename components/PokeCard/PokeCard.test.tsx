@@ -1,4 +1,4 @@
-import { composeStories } from '@storybook/testing-react';
+import { composeStories } from '@storybook/react';
 import { render, screen } from '@/test/testUtils';
 import * as stories from './PokeCard.stories';
 
@@ -9,6 +9,6 @@ describe('PokeCard', () => {
     render(<PokeCard />);
 
     screen.getByTestId(/pokecard/i);
-    // screen.getByText(/50%/i);
+    screen.getByText(/bulbasaur/i);
   });
 });

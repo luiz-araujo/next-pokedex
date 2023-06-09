@@ -1,10 +1,9 @@
-import { composeStories } from '@storybook/testing-react';
+import { composeStories } from '@storybook/react';
 import { server } from '@/mocks/server';
 import { render, screen } from '@/test/testUtils';
 import * as stories from '../stories/swr.stories';
 
-const { SuccessBehavior, LoadingBehavior, ErrorBehavior } =
-  composeStories(stories);
+const { SuccessBehavior, ErrorBehavior } = composeStories(stories);
 
 describe('pages/swr', () => {
   it('should render info about react repo', async () => {
@@ -16,23 +15,23 @@ describe('pages/swr', () => {
       name: /ir para a home/i,
     });
 
-    await screen.findByRole('heading', {
+    screen.getByRole('heading', {
       name: /react - it is a mock baby - ¯\\_\(ツ\)_\/¯/i,
     });
 
-    await screen.findByText(
+    screen.getByText(
       /this is a simple example how to mock an http request using msw/i,
     );
 
-    await screen.findByText(/👁 6661/i);
-    await screen.findByText(/✨ 181103/i);
-    await screen.findByText(/🍴 36799/i);
+    screen.getByText(/👁 6661/i);
+    screen.getByText(/✨ 181103/i);
+    screen.getByText(/🍴 36799/i);
   });
 
   it('should render loading message', async () => {
-    server.use(LoadingBehavior.parameters?.msw.handlers[0]);
+    server.use(SuccessBehavior.parameters?.msw.handlers[0]);
 
-    render(<LoadingBehavior />);
+    render(<SuccessBehavior />);
 
     await screen.findByText('Loading...');
   });
