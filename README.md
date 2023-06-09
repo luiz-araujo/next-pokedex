@@ -3,12 +3,12 @@
 </h1>
 
 <p align="center">
-  <img alt="Project programing languages count" src="https://img.shields.io/github/languages/count/luiz-araujo/pokedex?color=34cb79">
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/luiz-araujo/pokedex?color=34cb79">
+  <img alt="Project programing languages count" src="https://img.shields.io/github/languages/count/luiz-araujo/next-pokedex?color=34cb79">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/luiz-araujo/next-pokedex?color=34cb79">
   <a href="https://www.linkedin.com/in/luiz-carlos-araujo-junior/">
     <img alt="Made by Luiz Araújo" src="https://img.shields.io/badge/made%20by-Luiz Araújo-%20?color=34cb79">
   </a>
-  <img alt="GitHub license" src="https://img.shields.io/github/license/luiz-araujo/pokedex?color=34cb79">
+  <img alt="GitHub license" src="https://img.shields.io/github/license/luiz-araujo/next-pokedex?color=34cb79">
 </p>
 
 <p align="center">
@@ -101,7 +101,7 @@ After merging your receipt request to done, you can delete a branch from yours.
 
 ## License
 
-This project is under the MIT license. See the [LICENSE](https://github.com/luiz-araujo/pokedex/blob/master/LICENSE) for details.
+This project is under the MIT license. See the [LICENSE](https://github.com/luiz-araujo/next-pokedex/blob/main/LICENSE) for details.
 
 ## Get in touch!
 
