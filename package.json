@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "check:types": "tsc",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx --max-warnings 0",
     "format": "prettier --write .",
     "test": "jest",
