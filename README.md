@@ -95,6 +95,15 @@ $ pnpm dev
 
 After merging your receipt request to done, you can delete a branch from yours.
 
+## TODO
+
+- Add unit tests
+- Add E2E test
+- Add new game launch button
+- Add more cards with next api
+- Add option to select cards one by one
+- Add option to choose the amount of players
+
 ## Credits
 
 - [Layout](https://codepen.io/andybarefoot/pen/Gwggor) - Interface inspired in Playing card CSS Grid eCommerce layout by Andy Barefoot available on CodePen
